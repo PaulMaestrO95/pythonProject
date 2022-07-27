@@ -6,7 +6,7 @@ while True:
     client_region1 = client_region.lower()
     if client_region1 in region and client_region1 == region[0]:
         interest_rate = 2
-        print('Процентная ставка составит {0}%.'.format(str(interest_rate)))
+        print('Процентная ставка составит {0}%. До свидания!'.format(str(interest_rate)))
         exit()
     elif client_region1 not in region:
         print('Недоступный регион!')

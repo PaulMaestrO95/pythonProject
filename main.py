@@ -29,6 +29,8 @@ salary = input('Получаете ли Вы зарплату на карту н
 salary1 = salary.lower()
 if salary1 == 'да':
     interest_rate -= 0.5
+elif salary1 == 'нет':
+    interest_rate == interest_rate
 else:
     print('Пожалуйста, ответьте да или нет')
     salary = input('Получаете ли Вы зарплату на карту нашего банка? да/нет \n')
@@ -41,6 +43,8 @@ insurance = input('Будете подключать страховую прог
 insurance1 = insurance.lower()
 if insurance1 == 'да':
   interest_rate -= 1.5
+elif insurance1 == 'нет':
+    interest_rate == interest_rate
 else:
     print('Пожалуйста, ответьте да или нет')
     insurance = input('Будете подключать страховую программу? да/нет \n')
@@ -48,4 +52,5 @@ else:
     if insurance1 == 'да':
         interest_rate -= 1.5
 
-print('Процентная ставка составит {0}%'.format(str(interest_rate)))
+print('Процентная ставка составит {0}%. До свидания!'.format(str(interest_rate)))
+

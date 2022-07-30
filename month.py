@@ -9,11 +9,13 @@ if month1 not in m:
   print(f"{m}")
   month = input('Введите месяц \n')
   month1 = month.lower()
-
-day = int(input('Введите число \n'))
-
-if day not in day_month:
-  print('Неправильно ввели число. В месяце не более 31 дня.')
+try:
+  day = int(input('Введите число \n'))
+  if day not in day_month:
+    print('Неправильно ввели число. В месяце не более 31 дня.')
+    day = int(input('Введите число \n'))
+except ValueError:
+  print('Введите число!')
   day = int(input('Введите число \n'))
 
 if month1 == ('январь'):

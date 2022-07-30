@@ -15,41 +15,36 @@ def child():
 
 def data():
     global interest_rate
-    salary = input('Получаете ли Вы зарплату на карту нашего банка? да/нет \n')
-    salary1 = salary.lower()
-    if salary1 == 'да':
+    salary = input('Получаете ли Вы зарплату на карту нашего банка? да/нет \n').lower()
+    if salary == 'да':
         interest_rate -= 0.5
-    elif salary1 == 'нет':
+    elif salary == 'нет':
         interest_rate == interest_rate
     else:
         print('Пожалуйста, ответьте да или нет')
-        salary = input('Получаете ли Вы зарплату на карту нашего банка? да/нет \n')
-        salary1 = salary.lower()
-        if salary1 == 'да':
+        salary = input('Получаете ли Вы зарплату на карту нашего банка? да/нет \n').lower()
+        if salary == 'да':
             interest_rate -= 0.5
 
-    insurance = input('Будете подключать страховую программу? да/нет \n')
-    insurance1 = insurance.lower()
-    if insurance1 == 'да':
+    insurance = input('Будете подключать страховую программу? да/нет \n').lower()
+    if insurance == 'да':
         interest_rate -= 1.5
-    elif insurance1 == 'нет':
+    elif insurance == 'нет':
         interest_rate == interest_rate
     else:
         print('Пожалуйста, ответьте да или нет')
-        insurance = input('Будете подключать страховую программу? да/нет \n')
-        insurance1 = insurance.lower()
-        if insurance1 == 'да':
+        insurance = input('Будете подключать страховую программу? да/нет \n').lower()
+        if insurance == 'да':
             interest_rate -= 1.5
 
 def client_regions():
     while True:
-        client_region = input('Из какого Вы региона? \n')
-        client_region1 = client_region.lower()
-        if client_region1 in region and client_region1 == region[0]:
+        client_region = input('Из какого Вы региона? \n').lower()
+        if client_region in region and client_region == region[0]:
             interest_rate = 2
             print(f"Процентная ставка составит {str(interest_rate)}%. До свидания!")
             exit()
-        elif client_region1 not in region:
+        elif client_region not in region:
             print('Недоступный регион!')
             print('Доступные регионы: ' + str(region))
             continue

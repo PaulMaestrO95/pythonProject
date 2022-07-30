@@ -41,7 +41,7 @@ def data():
         if insurance1 == 'да':
             interest_rate -= 1.5
 
-if __name__=="__main__":
+def client_regions():
     while True:
         client_region = input('Из какого Вы региона? \n')
         client_region1 = client_region.lower()
@@ -55,6 +55,8 @@ if __name__=="__main__":
             continue
         break
 
+if __name__=="__main__":
+    client_regions()
     child()
     data()
-    print(f"Процентная ставка составит {str(int(interest_rate))}%. До свидания!")
+    print(f"Процентная ставка составит {str(float(interest_rate))}%. До свидания!")

@@ -9,6 +9,7 @@ if month1 not in m:
   print(f"{m}")
   month = input('Введите месяц \n')
   month1 = month.lower()
+
 try:
   day = int(input('Введите число \n'))
   if day not in day_month:

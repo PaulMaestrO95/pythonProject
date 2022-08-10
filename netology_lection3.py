@@ -45,7 +45,7 @@ cook_book = [
 	 ]
 ]
 
-person = 5
+person = int(input('Введите количество гостей: \n'))
 recipe = cook_book[2]
 
 for recipe in cook_book:

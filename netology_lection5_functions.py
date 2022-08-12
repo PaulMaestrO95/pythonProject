@@ -40,7 +40,7 @@ def add_document():
 	if shelf not in directories:
 		return 'Такой полки нет'
 	new_doc = {}
-	doc_type = input("Введите тип докемента: \n")
+	doc_type = input("Введите тип документа: \n")
 	doc_number = input("Введите номер документа: \n")
 	doc_name = input("Введите имя владельца документа: \n")
 	new_doc = dict(type=doc_type, number=doc_number, name=doc_name)
@@ -58,6 +58,10 @@ def delete_document():
 			value.remove(number)
 			return 'Документ удалён'
 	return 'Такого документа нет'
+
+# def transfer_document():
+# 	number_doc = input('Введите номер документа: \n')
+# 	shelf_transfer =
 
 
 def main():

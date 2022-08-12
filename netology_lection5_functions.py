@@ -48,10 +48,21 @@ def add_document():
 	directories[shelf] += [doc_number]
 	return 'Документ добавлен'
 
+def delete_document():
+	number = input('Введите номер документа: \n')
+	for document in documents:
+		if document.get('number') == number:
+			documents.remove(document)
+	for key, value in directories.items():
+		if number in value:
+			value.remove(number)
+			return 'Документ удалён'
+	return 'Такого документа нет'
+
 
 def main():
 	while True:
-		print('Доступные команды: p, s, l, a')
+		print('Доступные команды: p, s, l, a, d')
 		command = input('Введите название команды: \n')
 		if command == 'p':
 			print(find_people())
@@ -61,6 +72,8 @@ def main():
 			print(find_list())
 		elif command == 'a':
 			print(add_document())
+		elif command == 'd':
+			print(delete_document())
 		else:
 			print('Ввели неправильную команду, желаете завершить сеанс? y/n \n')
 			answer = input(' ').lower()

@@ -32,6 +32,7 @@ def find_shelf():
 def find_list():
 	for document in documents:
 		print(f"{document['type']} {document['number']} {document['name']}")
+	return ''
 
 
 def add_document():

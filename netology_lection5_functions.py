@@ -48,6 +48,7 @@ def add_document():
 	directories[shelf] += [doc_number]
 	return 'Документ добавлен'
 
+
 def delete_document():
 	number = input('Введите номер документа: \n')
 	for document in documents:
@@ -59,14 +60,22 @@ def delete_document():
 			return 'Документ удалён'
 	return 'Такого документа нет'
 
-# def transfer_document():
-# 	number_doc = input('Введите номер документа: \n')
-# 	shelf_transfer =
+
+def transfer_document():
+	number_doc = input('Введите номер документа: \n')
+	shelf_transfer = input('Введите нужную полку: \n')
+	if shelf_transfer not in directories:
+		return 'Такой полки нет'
+	for key, value in directories.items():
+		if number_doc in value:
+			value.remove(number_doc)
+	directories[shelf_transfer] += [number_doc]
+	return 'Документ перемещен'
 
 
 def main():
 	while True:
-		print('Доступные команды: p, s, l, a, d')
+		print('Доступные команды: p, s, l, a, d, m')
 		command = input('Введите название команды: \n')
 		if command == 'p':
 			print(find_people())
@@ -78,6 +87,8 @@ def main():
 			print(add_document())
 		elif command == 'd':
 			print(delete_document())
+		elif command == 'm':
+			print(transfer_document())
 		else:
 			print('Ввели неправильную команду, желаете завершить сеанс? y/n \n')
 			answer = input(' ').lower()

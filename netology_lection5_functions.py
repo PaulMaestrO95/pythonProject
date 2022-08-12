@@ -40,9 +40,12 @@ def add_document():
 	if shelf not in directories:
 		return 'Такой полки нет'
 	new_doc = {}
-	for data in ('type', 'number', 'name'):
-		new_doc[data] = input(f'{data}: ')
-	directories[shelf] = directories.get(shelf).append(new_doc['number'])
+	doc_type = input("Введите тип докемента: \n")
+	doc_number = input("Введите номер документа: \n")
+	doc_name = input("Введите имя владельца документа: \n")
+	new_doc = dict(type=doc_type, number=doc_number, name=doc_name)
+	documents.append(new_doc)
+	directories[shelf] += [doc_number]
 	return 'Документ добавлен'
 
 

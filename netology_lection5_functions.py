@@ -75,9 +75,18 @@ def transfer_document():
 	return 'Такого документа нет'
 
 
+def new_shell():
+	new_dict = input('Введите номер новой полки: \n')
+	if new_dict in directories.keys():
+		return 'Полка уже существует'
+	else:
+		directories[new_dict] = []
+		return 'Полка добавлена'
+
+
 def main():
 	while True:
-		print('Доступные команды: p, s, l, a, d, m')
+		print('Доступные команды: p, s, l, a, d, m, as, quit')
 		command = input('Введите название команды: \n')
 		if command == 'p':
 			print(find_people())
@@ -91,6 +100,10 @@ def main():
 			print(delete_document())
 		elif command == 'm':
 			print(transfer_document())
+		elif command == 'as':
+			print(new_shell())
+		elif command == 'quit':
+			break
 		else:
 			print('Ввели неправильную команду, желаете завершить сеанс? y/n \n')
 			answer = input('').lower()

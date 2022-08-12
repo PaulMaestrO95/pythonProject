@@ -45,6 +45,7 @@ def add_document():
 	directories[shelf] = directories.get(shelf).append(new_doc['number'])
 	return 'Документ добавлен'
 
+
 def main():
 	while True:
 		print('Доступные команды: p, s, l, a')

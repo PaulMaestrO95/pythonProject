@@ -63,14 +63,16 @@ def delete_document():
 
 def transfer_document():
 	number_doc = input('Введите номер документа: \n')
-	shelf_transfer = input('Введите нужную полку: \n')
-	if shelf_transfer not in directories:
-		return 'Такой полки нет'
-	for key, value in directories.items():
-		if number_doc in value:
-			value.remove(number_doc)
-	directories[shelf_transfer] += [number_doc]
-	return 'Документ перемещен'
+	if number_doc in sum(directories.values(), []):
+		shelf_transfer = input('Введите нужную полку: \n')
+		if shelf_transfer not in directories.keys():
+			return 'Такой полки нет'
+		for key, value in directories.items():
+			if number_doc in value:
+				value.remove(number_doc)
+				directories[shelf_transfer] += [number_doc]
+		return 'Документ перемещен'
+	return 'Такого документа нет'
 
 
 def main():
@@ -91,7 +93,7 @@ def main():
 			print(transfer_document())
 		else:
 			print('Ввели неправильную команду, желаете завершить сеанс? y/n \n')
-			answer = input(' ').lower()
+			answer = input('').lower()
 			if answer == 'y':
 				print('До свидания!')
 				break

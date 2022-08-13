@@ -38,7 +38,7 @@ def find_shelf():
 	for key in directories:
 		if number in directories.get(key):
 			return key
-	return 'Такого документа нет '
+	return 'Такого документа нет'
 
 
 def find_list():
@@ -51,9 +51,10 @@ def add_document():
 	shelf = input('В какую полку добавить документ? \n')
 	if shelf not in directories:
 		return 'Такой полки нет'
-	new_doc = {}
-	doc_type = input("Введите тип документа: \n")
 	doc_number = input("Введите номер документа: \n")
+	if doc_number in sum(directories.values(), []):
+		return 'Такой документ уже есть'
+	doc_type = input("Введите тип документа: \n")
 	doc_name = input("Введите имя владельца документа: \n")
 	new_doc = dict(type=doc_type, number=doc_number, name=doc_name)
 	documents.append(new_doc)

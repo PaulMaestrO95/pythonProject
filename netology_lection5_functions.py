@@ -49,7 +49,7 @@ def find_list():
 
 def add_document():
 	shelf = input('В какую полку добавить документ? \n')
-	if shelf not in directories:
+	if shelf not in directories.keys():
 		return 'Такой полки нет'
 	doc_number = input("Введите номер документа: \n")
 	if doc_number in sum(directories.values(), []):

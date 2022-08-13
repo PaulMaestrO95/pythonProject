@@ -95,6 +95,7 @@ def new_shell():
 		directories[new_dict] = []
 		return 'Полка добавлена'
 
+
 def help():
 	print(HELP)
 
@@ -102,7 +103,7 @@ def help():
 def main():
 	while True:
 		print('Доступные команды: p, s, l, a, d, m, as, quit, help')
-		command = input('Введите название команды: \n')
+		command = input('Введите название команды: \n').lower()
 		if command == 'p':
 			print(find_people())
 		elif command == 's':

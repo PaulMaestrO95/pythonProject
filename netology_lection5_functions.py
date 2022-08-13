@@ -1,5 +1,17 @@
 # Задача 1
 
+HELP = """
+Список доступных комманд:  
+p - отобразить имя имя, которому принадлежит номер документа 
+s - отобразить номер полки, на котором лежит номер документа
+l - отобразить список документов, содержащихся в списке documents
+a - добавить новый документ в список documents на определенную полку
+d - удалить документ из списка documents и из полки
+m - перенести номер документа из одной полки в другую
+as - создать новую полку
+quit - завершить программу
+		"""
+
 documents = [
 	{"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
 	{"type": "invoice", "number": "11-2", "name": "Геннадий Покемонов"},
@@ -83,10 +95,13 @@ def new_shell():
 		directories[new_dict] = []
 		return 'Полка добавлена'
 
+def help():
+	print(HELP)
+
 
 def main():
 	while True:
-		print('Доступные команды: p, s, l, a, d, m, as, quit')
+		print('Доступные команды: p, s, l, a, d, m, as, quit, help')
 		command = input('Введите название команды: \n')
 		if command == 'p':
 			print(find_people())
@@ -104,6 +119,8 @@ def main():
 			print(new_shell())
 		elif command == 'quit':
 			break
+		elif command == 'help':
+			help()
 		else:
 			print('Ввели неправильную команду, желаете завершить сеанс? y/n \n')
 			answer = input('').lower()
